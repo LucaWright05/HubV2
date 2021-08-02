@@ -1,0 +1,12 @@
+main: com.fakeskill.HubV1.Hub
+name: Hub
+version: 1.0
+commands:
+  sendhcf:
+  screen:
+    description: opens gui
+    usage: <command>
+  givehub:
+    description: gives hub selector
+    usage: <command>
+    aliases: []
