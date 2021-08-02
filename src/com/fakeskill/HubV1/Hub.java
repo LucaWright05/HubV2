@@ -24,7 +24,7 @@ public final class Hub extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new LeaveEvent(), this);
         ItemManager.init();
         getCommand("givehub").setExecutor(new HubCommands());
-        getCommand("sendhcf").setExecutor(new LobbyCommands());
+        getCommand("sendhcf").setExecutor(new LobbyCommands(this));
         getServer().getMessenger().registerOutgoingPluginChannel(this, "Bungeecord");
 
     }
@@ -37,15 +37,13 @@ public final class Hub extends JavaPlugin {
 
 
 
-    private static Hub instance;
-    public static Hub getInstance() {
-        return  instance;
-    }
+
+
 
 
     public void registerCommands() {
 
-        getCommand("sendhcf").setExecutor(new LobbyCommands());
+        getCommand("sendhcf").setExecutor(new LobbyCommands(this));
 
     }
 
@@ -54,7 +52,6 @@ public final class Hub extends JavaPlugin {
     public static Hub getPlugin() {
         return plugin;
     }
-
 
 
 

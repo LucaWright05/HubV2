@@ -39,9 +39,13 @@ public class LobbyCommands implements CommandExecutor {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        player.sendPluginMessage(Hub.getPlugin(), "Bungeecord", byteArrayOutputStream.toByteArray());
+        player.sendPluginMessage(main), "Bungeecord", byteArrayOutputStream.toByteArray();
         player.sendMessage(ChatColor.GREEN + "Connecting to server....");
     }
 
+    private Hub main;
+    public LobbyCommands(Hub main) {
+        this.main = main;
+    }
 
 }
